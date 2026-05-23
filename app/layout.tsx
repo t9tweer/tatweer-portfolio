@@ -1,41 +1,32 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TatweerX | Software Engineer & Digital Solutions",
+  title: "TatweerX | Modern Developer Portfolio",
 
   description:
-    "Modern software engineering portfolio showcasing scalable web applications, POS systems, UI/UX experiences, and premium digital products.",
+    "Modern portfolio showcasing scalable systems and premium UI/UX experiences.",
 
-  keywords: [
-    "TatweerX",
-    "Software Engineer",
-    "Next.js",
-    "React Developer",
-    "POS Systems",
-    "UI UX",
-    "Web Development",
-    "Frontend Developer",
-  ],
-
-  authors: [
-    {
-      name: "Musab Eisa",
-    },
-  ],
-
-  creator: "Musab Eisa",
+  metadataBase: new URL("https://tatweer-portfolio.vercel.app"),
 
   openGraph: {
-    title: "TatweerX",
+    title: "TatweerX | Modern Developer Portfolio",
 
     description:
-      "Premium software engineering portfolio and digital solutions platform.",
+      "Premium portfolio showcasing modern web development and digital experiences.",
 
-    url: "https://tatweerx.com",
+    url: "https://tatweer-portfolio.vercel.app",
 
     siteName: "TatweerX",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TatweerX Portfolio",
+      },
+    ],
 
     locale: "en_US",
 
@@ -48,7 +39,9 @@ export const metadata: Metadata = {
     title: "TatweerX",
 
     description:
-      "Premium software engineering portfolio and digital experiences.",
+      "Modern developer portfolio with cinematic UI and scalable systems.",
+
+    images: ["/og-image.png"],
   },
 };
 
@@ -59,9 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
