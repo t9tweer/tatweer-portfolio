@@ -18,7 +18,10 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="relative py-32">
+    <section
+     id="skills"
+     className="relative py-32"
+     >
       <Container>
 
         <FadeUp>

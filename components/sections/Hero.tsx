@@ -4,7 +4,10 @@ import FadeUp from "@/components/animations/FadeUp";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#050816]">
+    <section
+     id="home"
+     className="relative flex min-h-screen items-center overflow-hidden bg-[#050816]"
+     >
       
       <BackgroundEffects />
 
