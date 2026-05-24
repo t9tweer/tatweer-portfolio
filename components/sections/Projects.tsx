@@ -6,16 +6,22 @@ import { urlFor } from "@/sanity/lib/image";
 
 import Image from "next/image";
 
+import Link from "next/link";
+
 export default async function Projects() {
 
   const projects = await client.fetch(`
-    *[_type == "project"]{
-      _id,
-      title,
-      description,
-      image
-    }
-  `);
+  *[_type == "project" && featured == true] | order(order asc){
+    _id,
+    title,
+    slug,
+    description,
+    image,
+    technologies,
+    githubUrl,
+    liveUrl
+  }
+`);
 
   return (
     <section
@@ -44,8 +50,9 @@ export default async function Projects() {
 
             <FadeUp key={project._id} delay={index * 0.2}>
 
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <Link href={`/projects/${project.slug.current}`}>
 
+                <div className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition duration-500 hover:-translate-y-2 hover:border-cyan-400/40">
                 <div className="relative h-56">
 
                   {project.image && (
@@ -69,9 +76,26 @@ export default async function Projects() {
                     {project.description}
                   </p>
 
+                  <div className="mt-6 flex flex-wrap gap-3">
+
+                    {project.technologies?.map((tech: string) => (
+
+                      <span
+                        key={tech}
+                        className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300"
+                      >
+                        {tech}
+                      </span>
+
+                    ))}
+
+                  </div>
+
                 </div>
 
               </div>
+              
+              </Link>
 
             </FadeUp>
 

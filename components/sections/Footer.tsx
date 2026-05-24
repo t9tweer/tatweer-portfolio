@@ -84,7 +84,7 @@ export default function Footer() {
               <div className="flex flex-col gap-4 text-slate-400">
 
                 <p>
-                  mus46i3ss4@gmail.com
+                  musab.eisa@myself.com
                 </p>
 
                 <p>
@@ -116,7 +116,7 @@ export default function Footer() {
                 href="#"
                 className="text-sm text-slate-500 transition hover:text-cyan-400"
               >
-                Privacy Policy
+                Privacy Policy to Musab Eisa
               </a>
 
               <a
